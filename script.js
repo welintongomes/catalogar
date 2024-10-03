@@ -1,14 +1,4 @@
-// Função para exibir mensagens de feedback
-function mostrarMensagemFeedback(mensagem, tipo) {
-    const mensagemFeedback = document.getElementById('mensagemFeedback');
-    mensagemFeedback.textContent = mensagem;
-    mensagemFeedback.className = `alert alert-${tipo}`; // Define o tipo de alerta (success, danger, etc.)
-    mensagemFeedback.classList.remove('d-none');
 
-    setTimeout(() => {
-        mensagemFeedback.classList.add('d-none'); // Esconde a mensagem após 1,5 segundos
-    }, 1500);
-}
 
 // Abrindo ou criando o banco de dados IndexedDB
 function abrirBancoDeDados() {
