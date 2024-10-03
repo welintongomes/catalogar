@@ -242,11 +242,18 @@
         }
 
         /*fim media query para largura dos itens criados*/
-
+        
+        /*media query para os botões mini smartphone*/
+        @media (max-width: 378px) {
+            .mini-phone {  /* Estilos específicos para telas com largura máxima de 400px */
+                width: 100%;  /* Por exemplo, ocupar toda a largura */
+            }
+        }
+        /*fim media query para os botões*/
 
         .resultado-item img {
-            max-width: 100%;
-            max-height: 100px;
+            max-width: 60%;
+            max-height: 80%;
         }
 
         .resultado-item .conteudo-pre {
