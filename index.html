@@ -416,17 +416,22 @@
     
         <!-- Botões de Backup, Restauração e outras ações -->
         <div class="row" >
-            <div class="col-12 col-sm-6 col-md-3 mb-2">
+            <!-- configura os botões conforme o dispositivo acessado mb-4 espaçamento entre os botões-->
+            <!--  w-100 porcentagem de 0 a 100 configura expansão horizontal do botão  na tela-->
+            <div class="col-6 col-sm-6 col-md-3 mb-4">
                 <button id="exportarDados" class="btn btn-success w-100">Exportar Dados</button>
             </div>
-            <div class="col-12 col-sm-6 col-md-3 mb-2">
+            
+            <div class="col-6 col-sm-6 col-md-3 mb-4">
                 <button id="importarDados" class="btn btn-info w-100">Importar Dados</button>
                 <input type="file" id="inputImportarDados" class="form-control-file" style="display: none;">
             </div>
-            <div class="col-12 col-sm-6 col-md-3 mb-2">
+            
+            <div class="col-6 col-sm-6 col-md-3 mb-4">
                 <button id="limparFormulario" class="btn btn-warning w-100">Limpar Formulário</button>
             </div>
-            <div class="col-12 col-sm-6 col-md-3 mb-2">
+            
+            <div class="col-6 col-sm-6 col-md-3 mb-4">
                 <button id="excluirTudo" class="btn btn-danger w-100">Eliminar Tudo</button>
             </div>
         </div>
