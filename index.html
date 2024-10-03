@@ -213,15 +213,30 @@
         /*max-width: 400px;  Limita o tamanho máximo dos itens */
         margin: 1px auto; /* Centraliza os itens */
         }
+        .dark-mode .resultado-item {
+        width: 100%; /* Padrão para ocupar toda a largura em dispositivos pequenos */
+        /*max-width: 400px;  Limita o tamanho máximo dos itens */
+        margin: 1px auto; /* Centraliza os itens */
+        }
 
         @media (min-width: 768px) {
         .resultado-item {
             width: 50%; /* Em telas médias, os itens ocupam quase metade da tela */
         }
         }
+        @media (min-width: 768px) {
+        .dark-mode .resultado-item {
+            width: 50%; /* Em telas médias, os itens ocupam quase metade da tela */
+        }
+        }
 
         @media (min-width: 1024px) {
         .resultado-item {
+            width: 25%; /* Em telas maiores, os itens ocupam cerca de um terço da tela */
+        }
+        }
+        @media (min-width: 1024px) {
+        .dark-mode .resultado-item {
             width: 25%; /* Em telas maiores, os itens ocupam cerca de um terço da tela */
         }
         }
