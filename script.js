@@ -1,4 +1,7 @@
-
+//funçao para voltar ao inicio da pagina ao clicar no texto do titulo
+function voltarParaInicio() {
+    window.location.href = "index.html";
+     }
 
 // Abrindo ou criando o banco de dados IndexedDB
 function abrirBancoDeDados() {
