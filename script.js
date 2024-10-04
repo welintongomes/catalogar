@@ -183,7 +183,11 @@ function carregarCodigoParaEdicao(id) {
     });
 }
 
-
+// Função para pesquisar códigos no banco de dados
+// Função para remover acentos e transformar em letras minúsculas
+function removerAcentos(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
 
 // Função para pesquisar códigos no banco de dados
 function pesquisarCodigosIndexedDB(termo) {
@@ -194,13 +198,25 @@ function pesquisarCodigosIndexedDB(termo) {
 
             const codigosEncontrados = [];
 
+            const termosBusca = removerAcentos(termo).split(' '); // Quebra o termo em palavras e remove acentuação
+
             objectStore.openCursor().onsuccess = function (event) {
                 const cursor = event.target.result;
                 if (cursor) {
-                    const { titulo, conteudo, imagem, id } = cursor.value;
-                    if (titulo.toLowerCase().includes(termo.toLowerCase()) || conteudo.toLowerCase().includes(termo.toLowerCase())) {
+                    const { titulo, conteudo } = cursor.value;
+
+                    const tituloNormalizado = removerAcentos(titulo);
+                    const conteudoNormalizado = removerAcentos(conteudo);
+
+                    // Verifica se todas as palavras da busca estão presentes no título ou no conteúdo
+                    const corresponde = termosBusca.every(palavra =>
+                        tituloNormalizado.includes(palavra) || conteudoNormalizado.includes(palavra)
+                    );
+
+                    if (corresponde) {
                         codigosEncontrados.push(cursor.value);
                     }
+
                     cursor.continue();
                 } else {
                     resolve(codigosEncontrados);
